@@ -1,0 +1,8 @@
+<Files "data.db">
+  Deny from all
+</Files>
+
+Options -Indexes
+
+RewriteEngine On
+RewriteRule ^uploads/.+\.php$ - [F,L]

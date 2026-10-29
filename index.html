@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>dev-is.art — Art & Code, freely</title>
+   <meta name="description" content="An open space for art and programming. Share stories, photos, surveys, and reactions. No comments — only emojis.">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="assets/default.css">
+</head>
+<body>
+   <div class="scanlines" aria-hidden="true"></div>
+   <div class="background-blur" aria-hidden="true"></div>
+
+   <main class="main">
+      <div class="timeline">
+         <aside class="admin-section" id="admin-section" aria-label="Admin" hidden>
+            <section class="compose compose-hidden" id="compose" aria-label="Compose post">
+            <div class="compose-inner">
+               <div class="compose-avatar" aria-hidden="true">M</div>
+               <div class="compose-body">
+                  <div class="compose-type-tabs">
+                     <button type="button" class="compose-type-tab active" data-type="post">Post</button>
+                     <button type="button" class="compose-type-tab" data-type="survey">Survey</button>
+                  </div>
+                  <form class="compose-form" id="compose-form" novalidate>
+                     <textarea id="post-caption" name="caption" class="compose-textarea" placeholder="What's happening?" rows="3"></textarea>
+                     <div id="compose-survey-options" class="compose-survey-options" hidden aria-hidden="true">
+                        <div id="survey-options-list" class="survey-options-list-admin"></div>
+                        <button type="button" class="compose-add-option" id="add-survey-option" aria-label="Add option">+ Add</button>
+                     </div>
+                     <div class="compose-image-row">
+                        <input type="file" id="post-image" name="image" class="compose-file-input" accept="image/jpeg,image/png,image/gif,image/webp" aria-label="Add image">
+                     </div>
+                     <div class="compose-actions">
+                        <button type="submit" class="compose-submit" id="compose-submit-btn">Post</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+            </section>
+         </aside>
+
+         <section class="feed" id="feed" aria-label="Feed">
+            <div class="feed-list" id="feed-list"></div>
+            <p class="feed-empty" id="feed-empty" hidden>No posts yet.</p>
+         </section>
+      </div>
+   </main>
+
+   <footer class="footer">
+      <div class="footer-inner">
+         <a href="index.html" class="footer-brand">dev-is.art</a>
+         <span class="footer-tagline">Art & code, freely · Made in Ireland</span>
+         <p class="footer-credit">A solution by <a href="https://leatyon.org" class="footer-link" target="_blank" rel="noopener noreferrer">Leatyon Ltd.</a></p>
+      </div>
+   </footer>
+
+   <div class="reaction-popup" id="reaction-popup" role="dialog" aria-label="Choose reaction" hidden>
+      <div class="reaction-popup-backdrop" id="reaction-popup-backdrop"></div>
+      <div class="reaction-popup-box">
+         <div class="reaction-popup-emojis" id="reaction-popup-emojis"></div>
+      </div>
+   </div>
+
+   <div class="image-lightbox" id="image-lightbox" role="dialog" aria-label="View image" hidden>
+      <div class="image-lightbox-backdrop" id="image-lightbox-backdrop"></div>
+      <img class="image-lightbox-img" id="image-lightbox-img" src="" alt="">
+   </div>
+
+   <div class="share-preview-wrap" id="share-preview-wrap" aria-hidden="true">
+      <div class="share-preview" id="share-preview"></div>
+   </div>
+
+   <div class="share-modal" id="share-modal" role="dialog" aria-label="Share post" hidden>
+      <div class="share-modal-backdrop" id="share-modal-backdrop"></div>
+      <div class="share-modal-box">
+         <p class="share-modal-title">Share as image</p>
+         <img class="share-preview-img" id="share-preview-img" alt="Preview" hidden>
+         <div class="share-actions">
+            <a id="share-download" class="share-download-btn" href="#" download="dev-is-art-post.png">Download image</a>
+            <button type="button" class="share-close-btn" id="share-close-btn">Close</button>
+         </div>
+      </div>
+   </div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous"></script>
+   <script src="assets/app.js"></script>
+</body>
+</html>

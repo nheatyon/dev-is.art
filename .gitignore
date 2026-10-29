@@ -1,0 +1,8 @@
+.DS_Store
+.idea/
+.vscode/
+data.db
+uploads/*
+!uploads/.gitkeep
+.env
+.env.*
